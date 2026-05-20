@@ -1,5 +1,5 @@
 let captchaPass = false;
-function beforesubmit() {
+function beforesubmit(event) {
     if(captchaPass){
 let outputdate = document.querySelector(".outputdate");
 let inputdate = document.querySelector(".inputdate");
@@ -11,6 +11,7 @@ outputdate.value = formattedDate;
     }
     else{
         alert("Please complete the CAPTCHA before submitting the form.");
+        event.preventDefault(); // Prevent form submission
     }
 }
 
