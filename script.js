@@ -8,10 +8,12 @@ console.log("inputdate.value: " + inputdate.value);
 
 let formattedDate = new Date(inputdate.value).toLocaleDateString("en-In");
 outputdate.value = formattedDate;
+return true; // Allow form submission
     }
-    else{
+    else {
         alert("Please complete the CAPTCHA before submitting the form.");
         event.preventDefault(); // Prevent form submission
+            return false; // Prevent form submission
     }
 }
 
